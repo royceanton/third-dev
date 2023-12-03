@@ -1,6 +1,9 @@
 import React from 'react';
 import {
   ThirdwebProvider,
+  metamaskWallet,
+  coinbaseWallet,
+  walletConnect,
   ConnectWallet,
   embeddedWallet,
 } from '@thirdweb-dev/react';
@@ -10,11 +13,10 @@ function App() {
     <ThirdwebProvider
       activeChain="goerli"
       clientId={process.env.REACT_APP_CLIENT_ID}
-      supportedWallets={[embeddedWallet()]}
+      supportedWallets={[metamaskWallet(), coinbaseWallet(), walletConnect(), embeddedWallet()]}
     >
       <ConnectWallet
         theme={"light"}
-        switchToActiveChain={true}
         modalSize={"wide"}
       />
       {/* <ConnectWallet modalSize="compact" /> */}
