@@ -9,7 +9,7 @@ function App() {
   return (
     <ThirdwebProvider
       activeChain="goerli"
-      clientId="bb92503f0218ec501594a4cd84d24cb0"
+      clientId= {process.env.REACT_APP_CLIENT_ID}
       supportedWallets={[embeddedWallet()]}
     >
       <ConnectWallet />
